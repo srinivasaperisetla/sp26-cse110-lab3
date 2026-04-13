@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Meeting Minutes</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Simple meeting minutes page">
+    <link rel="icon" href="favicon.ico">
+  </head>
+  <body>
+    <header>
+      <h1>Pomodoro Timer Meeting Minutes</h1>
+      <nav>
+        <a href="#attendance">Attendance</a><br>
+        <a href="#agenda">Agenda</a><br>
+        <a href="#unfinished">Unfinished Business</a><br>
+        <a href="#new">New Business</a><br>
+        <a href="#comments">Comments</a><br>
+        <a href="#media">Media</a><br>
+        <a href="#form">Form</a>
+      </nav>
+      <hr>
+    </header>
+
+    <main>
+      <section>
+        <h2>Meeting Info</h2>
+        <p><strong>Topic:</strong> Brainstorming</p>
+        <p><strong>Date:</strong> April 13, 2026</p>
+      </section>
+
+      <section id="attendance">
+        <h2>Attendance</h2>
+        <ul>
+          <li>Shashank</li>
+          <li>Alice</li>
+          <li>Brian</li>
+        </ul>
+      </section>
+
+      <section id="agenda">
+        <h2>Agenda</h2>
+        <ol>
+          <li>Discuss project idea</li>
+          <li>Choose main features</li>
+          <li>Assign tasks</li>
+        </ol>
+      </section>
+
+      <section id="unfinished">
+        <h2>Unfinished Business</h2>
+        <p>We still need to decide if the app should be a <b>web app</b> or a mobile app.</p>
+      </section>
+
+      <section id="new">
+        <h2>New Business</h2>
+        <div>
+          <p>We want a <strong>timer</strong>, short breaks, and task tracking.</p>
+          <p><span>Focus score</span> was also suggested.</p>
+        </div>
+      </section>
+
+      <section id="comments">
+        <h2>Comments</h2>
+        <h3>Extra Notes</h3>
+        <p>
+          Alice asked about notifications.<br>
+          Brian said to keep version one simple.
+        </p>
+        <p>This idea looks <i>interesting</i> and seems <em>useful</em> for students.</p>
+      </section>
+
+      <section id="media">
+        <h2>Media</h2>
+        <p>Diagram image:</p>
+        <img src="diagram.jpg" alt="Meeting diagram" width="300">
+
+        <p>Audio recording:</p>
+        <audio controls>
+          <source src="audio.mp3" type="audio/mpeg">
+          Your browser does not support audio.
+        </audio>
+
+        <p>Video recording:</p>
+        <video controls width="300">
+          <source src="video.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+      </section>
+
+      <section>
+        <h2>More Details</h2>
+        <details>
+          <summary>Open notes</summary>
+          <p>The team agreed to make a simple first version before adding more features.</p>
+        </details>
+      </section>
+
+      <section id="form">
+        <h2>Simple Form</h2>
+        <form>
+          <fieldset>
+            <legend>Feedback</legend>
+
+            <p>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name">
+            </p>
+
+            <p>
+              <label for="day">Date:</label>
+              <input type="date" id="day" name="day">
+            </p>
+
+            <p>Did you attend?</p>
+            <input type="radio" id="yes" name="attend" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="attend" value="no">
+            <label for="no">No</label>
+
+            <p>What did you like?</p>
+            <input type="checkbox" id="ideas" name="like" value="ideas">
+            <label for="ideas">Ideas</label>
+            <input type="checkbox" id="planning" name="like" value="planning">
+            <label for="planning">Planning</label>
+
+            <p>
+              <label for="role">Role:</label>
+              <input list="roles" id="role" name="role">
+              <datalist id="roles">
+                <option value="Developer"></option>
+                <option value="Designer"></option>
+                <option value="Tester"></option>
+              </datalist>
+            </p>
+
+            <p>
+              <label for="rating">Rating:</label>
+              <select id="rating" name="rating">
+                <option value="good">Good</option>
+                <option value="okay">Okay</option>
+                <option value="bad">Bad</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="notes">Comments:</label><br>
+              <textarea id="notes" name="notes" rows="4" cols="30"></textarea>
+            </p>
+
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <hr>
+      <p>End of meeting minutes.</p>
+    </footer>
+  </body>
+</html>
