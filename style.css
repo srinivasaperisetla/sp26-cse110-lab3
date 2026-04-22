@@ -21,6 +21,7 @@ body {
   color: var(--primary-color, #333);
   background-color: var(--bg-color, #fff);
   line-height: 1.6;
+  font-size: 1rem;
 }
 
 header {
@@ -46,10 +47,12 @@ h3 {
 
 footer {
   background-color: whitesmoke;
+  font-size: 10pt;
 }
 
 h1 {
   color: #ecf0f1;
+  font-size: 2em;
 }
 
 legend {
@@ -82,8 +85,21 @@ details {
 
 img {
   border-radius: 8px;
+  height: auto;
+  max-width: 100%;
 }
 
 nav {
   padding: 10px 0 10px 0;
+}
+
+main {
+  width: 90%;
+  max-width: 900px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+hr {
+  height: 0.05cm;
 }
