@@ -40,6 +40,7 @@ nav a {
 }
 
 h2 {
+  color: #263c73;
   color: color(display-p3 0.15 0.25 0.45);
   text-align: center;
 }
@@ -194,14 +195,12 @@ section:has(> ul) {
   padding-left: 15px;
 }
 
-nav {
-  a {
-    border-radius: 4px;
+nav a {
+  border-radius: 4px;
+}
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+nav a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
