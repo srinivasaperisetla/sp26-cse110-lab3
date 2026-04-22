@@ -1,2 +1,2 @@
-# Lab 2 - Starter
-https://srinivasaperisetla.github.io/Lab2_Starter/
+# Lab 3
+ https://srinivasaperisetla.github.io/sp26-cse110-lab3/
