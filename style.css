@@ -30,10 +30,12 @@ header {
 
 nav a {
   color: hsl(204, 70%, 53%);
+  text-decoration: none;
 }
 
 h2 {
   color: color(display-p3 0.15 0.25 0.45);
+  text-align: center;
 }
 
 h3 {
@@ -42,4 +44,12 @@ h3 {
 
 footer {
   background-color: whitesmoke;
+}
+
+h1 {
+  color: #ecf0f1;
+}
+
+legend {
+  text-decoration: underline;
 }
