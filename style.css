@@ -143,3 +143,63 @@ label {
 .hidden {
   display: none;
 }
+
+#attendance {
+  border-left: 3px solid var(--accent-color, #e74c3c);
+  padding-left: 15px;
+}
+
+input[type="text"] {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+}
+
+section p {
+  margin-top: 5px;
+}
+
+nav > a {
+  padding: 4px 8px;
+}
+
+h2 ~ p {
+  margin-bottom: 8px;
+}
+
+h2 + p {
+  margin-top: 10px;
+}
+
+p.highlight {
+  background-color: hsla(48, 100%, 67%, 0.3);
+  padding: 6px;
+  border-radius: 4px;
+}
+
+section:has(> ul) {
+  border-left: 3px solid hsl(204, 70%, 53%);
+  padding-left: 15px;
+}
+
+nav {
+  a {
+    border-radius: 4px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

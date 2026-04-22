@@ -9,6 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+      summary {
+        cursor: pointer;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -29,7 +35,7 @@
       <section>
         <h2>Meeting Info</h2>
         <p><strong>Topic:</strong> Brainstorming</p>
-        <p><strong>Date:</strong> April 13, 2026</p>
+        <p style="font-style: italic;"><strong>Date:</strong> April 13, 2026</p>
       </section>
 
       <section id="attendance">
@@ -52,7 +58,7 @@
 
       <section id="unfinished">
         <h2>Unfinished Business</h2>
-        <p>We still need to decide if the app should be a <b>web app</b> or a mobile app.</p>
+        <p class="highlight">We still need to decide if the app should be a <b>web app</b> or a mobile app.</p>
       </section>
 
       <section id="new">
