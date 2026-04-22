@@ -108,3 +108,16 @@ main {
 hr {
   height: 0.05cm;
 }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  grid-template-rows: auto auto;
+}
+
+.feature-card {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
