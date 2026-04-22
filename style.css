@@ -26,6 +26,8 @@ body {
 header {
   background-color: rgba(44, 62, 80, 0.95);
   color: #ecf0f1;
+  margin: 0 auto;
+  padding: 15px 20px 15px 20px;
 }
 
 nav a {
@@ -52,4 +54,36 @@ h1 {
 
 legend {
   text-decoration: underline;
+}
+
+section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+fieldset {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 2px;
+  border-radius: 8px;
+}
+
+details {
+  border: 1px dashed #aaa;
+  padding: 10px 15px 10px 15px;
+  border-radius: 4px;
+}
+
+img {
+  border-radius: 8px;
+}
+
+nav {
+  padding: 10px 0 10px 0;
 }
