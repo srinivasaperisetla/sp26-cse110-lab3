@@ -1,0 +1,24 @@
+/* Base styles for Meeting Minutes - Lab 3 */
+
+/* CSS Variables defined on :root for consistent theming */
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #e74c3c;
+  --bg-color: #f9f9f9;
+  --font-stack: 'Inter', sans-serif;
+}
+
+/* Universal selector reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body base styles using CSS variable with fallback */
+body {
+  font-family: var(--font-stack, Arial, sans-serif);
+  color: var(--primary-color, #333);
+  background-color: var(--bg-color, #fff);
+  line-height: 1.6;
+}
