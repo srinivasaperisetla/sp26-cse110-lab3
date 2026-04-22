@@ -1,7 +1,7 @@
 ---
-name: Task
+name: "[TASK]"
 about: A concrete piece of work for Lab 3
-title: ''
+title: "[TASK]"
 labels: ''
 assignees: ''
 
