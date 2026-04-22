@@ -29,6 +29,9 @@ header {
   color: #ecf0f1;
   margin: 0 auto;
   padding: 15px 20px 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 nav a {
@@ -120,4 +123,23 @@ hr {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 6px;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color, #2c3e50);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+label {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
 }
