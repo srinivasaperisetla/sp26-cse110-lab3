@@ -1,123 +1,210 @@
-/* Base styles for Meeting Minutes - Lab 3 */
+/* ==========================================================================
+   Meeting Minutes Stylesheet — Lab 3
+   External stylesheet (preferred method for readability)
+   ========================================================================== */
 
-/* CSS Variables defined on :root for consistent theming */
+/* --------------------------------------------------------------------------
+   CSS Variables — defined on :root for site-wide theming
+   -------------------------------------------------------------------------- */
 :root {
   --primary-color: #2c3e50;
   --accent-color: #e74c3c;
   --bg-color: #f9f9f9;
-  --font-stack: 'Inter', sans-serif;
+  --font-stack: "Inter", sans-serif;
 }
 
-/* Universal selector reset */
+/* --------------------------------------------------------------------------
+     Universal selector reset — normalize default browser spacing
+     -------------------------------------------------------------------------- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Body base styles using CSS variable with fallback */
+/* --------------------------------------------------------------------------
+     Body base — CSS variable with fallback demonstrated on font-family
+     -------------------------------------------------------------------------- */
 body {
-  font-family: var(--font-stack, Arial, sans-serif);
+  font-family: var(--font-stack, Arial, sans-serif); /* variable + fallback */
   color: var(--primary-color, #333);
   background-color: var(--bg-color, #fff);
   line-height: 1.6;
-  font-size: 1rem;
+  font-size: 1rem; /* relative unit: rem */
 }
 
+/* --------------------------------------------------------------------------
+     Header — uses rgba() color format and sticky positioning
+     -------------------------------------------------------------------------- */
 header {
-  background-color: rgba(44, 62, 80, 0.95);
-  color: #ecf0f1;
-  margin: 0 auto;
+  background-color: rgba(44, 62, 80, 0.95); /* rgba color format */
+  color: #ecf0f1; /* hex color format */
+  margin: 0 auto; /* auto margin for horizontal centering */
+  /* Shorthand padding with all four values: top right bottom left */
   padding: 15px 20px 15px 20px;
-  position: sticky;
+  position: sticky; /* position value #1 */
   top: 0;
   z-index: 10;
 }
 
-nav a {
-  color: hsl(204, 70%, 53%);
-  text-decoration: none;
+h1 {
+  color: #ecf0f1;
+  font-size: 2em; /* relative unit: em */
 }
 
+/* --------------------------------------------------------------------------
+     Headings — demonstrates wider-gamut color() and color-mix()
+     -------------------------------------------------------------------------- */
 h2 {
+  /* Fallback for older browsers */
   color: #263c73;
+  /* Wider-gamut override using predefined color space */
   color: color(display-p3 0.15 0.25 0.45);
   text-align: center;
 }
 
 h3 {
+  /* color-mix() blends two colors by percentage */
   color: color-mix(in srgb, #e74c3c 60%, #3498db);
 }
 
-footer {
-  background-color: whitesmoke;
-  font-size: 10pt;
+/* Selector list — applies same font to multiple heading levels */
+h1,
+h2,
+h3 {
+  font-family: "Inter", sans-serif;
 }
 
-h1 {
-  color: #ecf0f1;
-  font-size: 2em;
+/* --------------------------------------------------------------------------
+     Navigation — flexbox layout (4 flex attributes, 3+ children required in HTML)
+     -------------------------------------------------------------------------- */
+nav {
+  /* Shorthand padding: top right bottom left */
+  padding: 10px 0 10px 0;
+  display: flex; /* flex attribute 1 */
+  flex-direction: row; /* flex attribute 2 */
+  justify-content: center; /* flex attribute 3 */
+  flex-wrap: wrap; /* flex attribute 4 */
+  gap: 1rem;
 }
 
-legend {
+nav a {
+  color: hsl(204, 70%, 53%); /* hsl color format */
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* Child combinator — direct <a> children of <nav> only */
+nav > a {
+  padding: 4px 8px;
+}
+
+/* Pseudo-class :hover on nav links */
+nav a:hover {
   text-decoration: underline;
 }
 
+/* --------------------------------------------------------------------------
+     Main content container — sizing properties
+     -------------------------------------------------------------------------- */
+main {
+  width: 90%; /* relative unit: percentage */
+  max-width: 900px; /* absolute unit: px */
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+     Sections — longhand margin demonstration
+     -------------------------------------------------------------------------- */
 section {
+  /* Longhand margin properties */
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 0;
   margin-right: 0;
 }
 
+/* Descendant combinator — any <p> inside a <section> */
+section p {
+  margin-top: 5px;
+}
+
+/* Adjacent sibling combinator — <p> directly after <h2> */
+h2 + p {
+  margin-top: 10px;
+}
+
+/* General sibling combinator — any <p> following <h2> */
+h2 ~ p {
+  margin-bottom: 8px;
+}
+
+/* Combining two selectors — <p> elements with class "highlight" */
+p.highlight {
+  background-color: hsla(48, 100%, 67%, 0.3); /* hsla color format */
+  /* Shorthand margin with all four values: top right bottom left */
+  margin: 8px 0 8px 0;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+/* :has() — section containing a <ul> gets accent border */
+section:has(> ul) {
+  border-left: 3px solid hsl(204, 70%, 53%);
+  padding-left: 15px;
+}
+
+/* --------------------------------------------------------------------------
+     Fieldset — longhand padding and longhand border properties
+     -------------------------------------------------------------------------- */
 fieldset {
+  /* Longhand padding */
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 20px;
   padding-right: 20px;
+  /* Longhand border properties */
   border-style: solid;
   border-color: #ccc;
   border-width: 2px;
   border-radius: 8px;
+
+  /* Nested selector — targets <legend> inside fieldset (adopted 2023) */
+  & legend {
+    text-decoration: underline;
+    padding: 0 6px;
+    font-weight: bold;
+  }
 }
 
+/* --------------------------------------------------------------------------
+     Details — shorthand border demonstration
+     -------------------------------------------------------------------------- */
 details {
-  border: 1px dashed #aaa;
+  border: 1px dashed #aaa; /* shorthand border: width style color */
+  /* Shorthand padding: top right bottom left */
   padding: 10px 15px 10px 15px;
   border-radius: 4px;
 }
 
+/* --------------------------------------------------------------------------
+     Images — responsive sizing
+     -------------------------------------------------------------------------- */
 img {
   border-radius: 8px;
   height: auto;
   max-width: 100%;
 }
 
-nav {
-  padding: 10px 0 10px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-main {
-  width: 90%;
-  max-width: 900px;
-  min-width: 320px;
-  margin: 0 auto;
-}
-
-hr {
-  height: 0.05cm;
-}
-
+/* --------------------------------------------------------------------------
+     Feature grid — CSS Grid (3+ grid attributes, 3+ children required in HTML)
+     -------------------------------------------------------------------------- */
 .feature-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  grid-template-rows: auto auto;
+  display: grid; /* grid attribute 1 */
+  grid-template-columns: repeat(2, 1fr); /* grid attribute 2 */
+  grid-template-rows: auto auto; /* grid attribute 3 */
+  gap: 1rem; /* grid attribute 4 */
 }
 
 .feature-card {
@@ -126,8 +213,11 @@ hr {
   border-radius: 6px;
 }
 
+/* --------------------------------------------------------------------------
+     Back-to-top button — fixed positioning demo (position value #2)
+     -------------------------------------------------------------------------- */
 .back-to-top {
-  position: fixed;
+  position: fixed; /* position value #2 */
   bottom: 20px;
   right: 20px;
   background-color: var(--primary-color, #2c3e50);
@@ -137,72 +227,58 @@ hr {
   text-decoration: none;
 }
 
+/* --------------------------------------------------------------------------
+     Forms & misc — display value demonstrations
+     -------------------------------------------------------------------------- */
 label {
-  display: inline-block;
+  display: inline-block; /* display value #1 */
 }
 
 .hidden {
-  display: none;
+  display: none; /* display value #2 */
 }
 
+/* ID selector */
 #attendance {
   border-left: 3px solid var(--accent-color, #e74c3c);
   padding-left: 15px;
 }
 
+/* Attribute selector */
 input[type="text"] {
   border: 1px solid #ccc;
   padding: 6px 10px;
   border-radius: 4px;
 }
 
+/* Pseudo-class :hover on anchors */
 a:hover {
   opacity: 0.8;
 }
 
+/* Pseudo-class :active on buttons */
 button:active {
   transform: scale(0.97);
 }
 
-h1, h2, h3 {
-  font-family: 'Inter', sans-serif;
+/* --------------------------------------------------------------------------
+     Footer — uses a named color and absolute unit (pt)
+     -------------------------------------------------------------------------- */
+footer {
+  background-color: whitesmoke; /* named color */
+  font-size: 10pt; /* absolute unit: pt */
+  text-align: center;
+  padding: 12px;
 }
 
-section p {
-  margin-top: 5px;
+/* Absolute unit: cm (demonstrated on the horizontal rule) */
+hr {
+  height: 0.05cm;
 }
 
-nav > a {
-  padding: 4px 8px;
-}
-
-h2 ~ p {
-  margin-bottom: 8px;
-}
-
-h2 + p {
-  margin-top: 10px;
-}
-
-p.highlight {
-  background-color: hsla(48, 100%, 67%, 0.3);
-  padding: 6px;
-  border-radius: 4px;
-}
-
-section:has(> ul) {
-  border-left: 3px solid hsl(204, 70%, 53%);
-  padding-left: 15px;
-}
-
-nav a {
-  border-radius: 4px;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
+/* --------------------------------------------------------------------------
+     Responsive media queries — tablet and phone breakpoints
+     -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
